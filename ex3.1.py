@@ -37,8 +37,8 @@ def evaluate(expression):
             stack.push(int(token))
         elif token == ')':
             # Pop the top operator and the two top operands from the stack
-            operand1 = stack.pop()
             operand2 = stack.pop()
+            operand1 = stack.pop()
             operator = stack.pop()
             # Apply the operator to the operands and push the result onto the stack
             result = operators[operator](operand1, operand2)
@@ -55,5 +55,4 @@ expression = sys.argv[1]
 
 # Evaluate the expression and print the result
 result = evaluate(expression)
-print(f'result: {result}')
-
+print(int(result))
